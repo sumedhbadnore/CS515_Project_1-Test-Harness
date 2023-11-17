@@ -60,7 +60,7 @@ def main():
                 if args.words:
                     print(f"Words:      {words}")
                 if args.characters:
-                    print(f"Characters: {characters + 1}")
+                    print(f"Characters: {characters}")
                 if True:
                     print(f"In file:    {fileNames}\n")
         except Exception as e:
