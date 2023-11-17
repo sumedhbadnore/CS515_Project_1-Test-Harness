@@ -22,7 +22,7 @@ def main():
     parser = argparse.ArgumentParser(prog="wc",
         description="Counts words, lines and characters of input files.")
     parser.add_argument("allFiles", type=str, nargs="*",
-                        help="Takes file path to be processed", default=str(sys.stdin))
+                        help="Takes file path to be processed")
     parser.add_argument("-c", "--characters", action="store_true",
                         help="Only counts number of characters")
     parser.add_argument("-w", "--words", action="store_true",
@@ -31,7 +31,10 @@ def main():
                         help="Print the line counts.")
 
     args = parser.parse_args()
-    file = ""
+
+    if not args.allFiles:
+        args.allFiles = [sys.stdin]
+    
     totalLines = 0
     totalWords = 0
     totalCharacters = 0
