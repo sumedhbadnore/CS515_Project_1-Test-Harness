@@ -25,17 +25,20 @@ def test_run():
         with open(out_file) as f:
             expected_output = f.read()
         assert expected_output.strip() == output.strip()
-    print("success")
+    print("Success!")
 
     # Run test for gron.py
-    # input_files = [file for file in files if file.endswith(".in") and "gron" in file]
-    # output_files = [file for file in files if file.endswith(".out") and "gron" in file]
+    input_files = [file for file in files if file.endswith(".in") and "gron" in file]
+    output_files = [file for file in files if file.endswith(".out") and "gron" in file]
 
-    # for i in range(0, len(input_files)):
-    #     file_path = os.path.join(files_directory, input_files[i])
-    #     output = gron_test(file_path)
-    #     out_file = os.path.join(files_directory, output_files[i])
-    #     with open(out_file) as f:
-    #         expected_output = f.read()
-    #     assert expected_output.strip() == output.strip()
-    #     print("Success!")
+    for i in range(0, len(input_files)):
+        file_path = os.path.join(files_directory, input_files[i])
+        output = gron_test(file_path)
+        out_file = os.path.join(files_directory, output_files[i])
+        with open(out_file) as f:
+            expected_output = f.read()
+        assert expected_output.strip() == output.strip()
+    print("Success!")
+
+# if __name__ == "__main__":
+#     test_run()
