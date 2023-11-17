@@ -12,7 +12,7 @@ def gron_test(file_path):
     result = subprocess.check_output(['python', os.path.join('prog','gron.py'), file_path], universal_newlines=True)
     return (result.strip())
 
-def run_tests():
+def test_run():
     global files_directory
     # Run tests for wc.py
     input_files = [file for file in files if file.endswith(".in") and "wc" in file]
