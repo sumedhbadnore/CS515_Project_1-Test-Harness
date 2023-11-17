@@ -39,7 +39,3 @@ def test_run():
     #         expected_output = f.read()
     #     assert expected_output.strip() == output.strip()
     #     print("Success!")
-
-
-if __name__ == "__main__":
-    run_tests()
