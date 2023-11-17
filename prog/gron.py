@@ -26,13 +26,14 @@ def gron(data, parent="", open_dict=True, open_list=True, obj="json"):
 def main():
     parser = argparse.ArgumentParser(prog="gron", description="Prints JSON in more readable format.")
     parser.add_argument("filename", type=str, help="Provide the name of the file.")
+    parser.add_argument("--obj", type=str, help="prints the output with provided object", default="json")
 
     arguments = parser.parse_args()
 
     try:
         with open(arguments.filename) as file:
             json_data = json.load(file)
-            gron(json_data)
+            gron(json_data, obj=arguments.obj)
     
     except Exception as e:
         sys.stderr.write(e)
