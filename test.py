@@ -6,7 +6,7 @@ files = os.listdir(files_directory)
 
 def wc_test(file_path):
     result = subprocess.check_output(['python', os.path.join('prog','wc.py'), file_path], universal_newlines=True)
-    return (result.strip())
+    return (result)
 
 def gron_test(file_path):
     result = subprocess.check_output(['python', os.path.join('prog','gron.py'), file_path], universal_newlines=True)
@@ -24,11 +24,8 @@ def run_tests():
         out_file = os.path.join(files_directory, output_files[i])
         with open(out_file) as f:
             expected_output = f.read()
-        # assert expected_output.strip() == output.strip()
-        # print("Success!")
-        print(f"{i}\n{expected_output}")
-        print(f"{i}\n{output}")
-
+        assert expected_output.strip() == output.strip()
+    print("success")
 
     # Run test for gron.py
     # input_files = [file for file in files if file.endswith(".in") and "gron" in file]
