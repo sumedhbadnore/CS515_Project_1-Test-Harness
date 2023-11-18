@@ -56,24 +56,24 @@ def main():
                 totalCharacters += characters
 
                 if args.lines:
-                    print(f"Lines:      {lines}")
+                    print(f"\t{lines}", end="")
                 if args.words:
-                    print(f"Words:      {words}")
+                    print(f"\t{words}", end="")
                 if args.characters:
-                    print(f"Characters: {characters}")
+                    print(f"\t{characters}", end="")
                 if True:
-                    print(f"In file:    {fileNames}\n")
+                    print(f"  {fileNames}")
         except Exception as e:
             print(e)
             sys.exit(1)
 
     if len(args.allFiles) > 1:
             if args.lines:
-                print(f"Total Lines: {totalLines}")
+                print(f"\t{totalLines}", end="")
             if args.words:
-                print(f"Total Words: {totalWords}")
+                print(f"\t{totalWords}", end="")
             if args.characters:
-                print(f"Total Chars: {totalCharacters + len(args.allFiles)}")
+                print(f"\t{totalCharacters}  total")
         
     sys.exit(0)
 
