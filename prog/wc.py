@@ -18,6 +18,16 @@ def wc(fileName):
     return lines, words, characters, fileNames
 
 
+# def wc_stdin(file):
+#     lines = 0
+#     words = 0
+#     characters = 0
+#     for line in file:
+#             lines += 1
+#             words += len(line.split())
+#             characters += len(line)
+#     return lines, words, characters
+
 def main():
     parser = argparse.ArgumentParser(prog="wc",
         description="Counts words, lines and characters of input files.")
@@ -32,13 +42,9 @@ def main():
 
     args = parser.parse_args()
 
-    if not args.allFiles:
-        args.allFiles = [sys.stdin]
-    
     totalLines = 0
     totalWords = 0
     totalCharacters = 0
-    file = args.allFiles
 
     for file in args.allFiles:
         try:
