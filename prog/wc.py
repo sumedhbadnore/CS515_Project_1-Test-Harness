@@ -49,7 +49,7 @@ def main():
         if not any([args.characters, args.words, args.lines]):
                 args.characters = args.words = args.lines = True
         if not sys.stdin.isatty():
-            print("Triggered")
+            # print("Triggered")
             lines, words, characters = wc_stdin(file=sys.stdin)
             if args.lines:
                 print(f" {lines}", end="")
