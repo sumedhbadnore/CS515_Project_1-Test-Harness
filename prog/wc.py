@@ -17,15 +17,15 @@ def wc(fileName):
     return lines, words, characters, fileNames
 
 
-def wc_stdin(file):
-    lines = 0
-    words = 0
-    characters = 0
-    for line in file:
-            lines += 1
-            words += len(line.split())
-            characters += len(line)
-    return lines, words, characters
+# def wc_stdin(file):
+#     lines = 0
+#     words = 0
+#     characters = 0
+#     for line in file:
+#             lines += 1
+#             words += len(line.split())
+#             characters += len(line)
+#     return lines, words, characters
 
 def main():
     parser = argparse.ArgumentParser(prog="wc",
@@ -45,22 +45,22 @@ def main():
     totalWords = 0
     totalCharacters = 0
 
-    try:
-        if not any([args.characters, args.words, args.lines]):
-                args.characters = args.words = args.lines = True
-        if not sys.stdin.isatty():
-            # print("Triggered")
-            lines, words, characters = wc_stdin(file=sys.stdin)
-            if args.lines:
-                print(f" {lines}", end="")
-            if args.words:
-                print(f" {words}", end="")
-            if args.characters:
-                print(f" {characters}", end="")
-            sys.exit(0)
-    except Exception as e:
-        print(e)
-        sys.exit(1)
+    # try:
+    #     if not any([args.characters, args.words, args.lines]):
+    #             args.characters = args.words = args.lines = True
+    #     if not sys.stdin.isatty():
+    #         # print("Triggered")
+    #         lines, words, characters = wc_stdin(file=sys.stdin)
+    #         if args.lines:
+    #             print(f" {lines}", end="")
+    #         if args.words:
+    #             print(f" {words}", end="")
+    #         if args.characters:
+    #             print(f" {characters}", end="")
+    #         sys.exit(0)
+    # except Exception as e:
+    #     print(e)
+    #     sys.exit(1)
 
 
     for file in args.allFiles:
