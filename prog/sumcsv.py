@@ -46,7 +46,7 @@ def main():
         for col in args.column:
             column, result = column_sum(args.file, col, args.colrange)
             if result is not None:
-                print(f'Sum Of {column}: {result}')
+                print(f"Sum Of Column '{column}': {result}")
     
     except Exception as e:
         print(e)
