@@ -17,7 +17,6 @@ def sumcsv_test(file_path, column):
     return (result.strip())
 
 def test_run():
-    try:
         global files_directory
         print("------------------------ wc.py -----------------------------")
         # Run tests for wc.py
