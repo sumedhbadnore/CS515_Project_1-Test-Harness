@@ -1,11 +1,10 @@
-{"menu": {
-    "id": "file",
-    "value": "File",
-    "popup": {
-      "menuitem": [
-        {"value": "New", "onclick": "CreateNewDoc()"},
-        {"value": "Open", "onclick": "OpenDoc()"},
-        {"value": "Close", "onclick": "CloseDoc()"}
-      ]
+{
+  "person": {
+    "name": "Alice",
+    "age": 25,
+    "address": {
+      "city": "Paris",
+      "country": "France"
     }
-  }}
+  }
+}

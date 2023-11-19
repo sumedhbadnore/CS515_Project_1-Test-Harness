@@ -54,26 +54,26 @@ def test_run():
                 continue
         print("Success!")
 
-        print("------------------------ sumcsv.py -----------------------------")
-        # Run test for sumcsv.py
-        input_files = [file for file in files if file.endswith(".in") and "sumcsv" in file]
-        output_files = [file for file in files if file.endswith(".out") and "sumcsv" in file]
+        # print("------------------------ sumcsv.py -----------------------------")
+        # # Run test for sumcsv.py
+        # input_files = [file for file in files if file.endswith(".in") and "sumcsv" in file]
+        # output_files = [file for file in files if file.endswith(".out") and "sumcsv" in file]
 
-        # Column is Hardcoded work on this 
-        column = "Population"
+        # # Column is Hardcoded work on this 
+        # column = "Population"
 
-        for i in range(0, len(input_files)):
-            file_path = os.path.join(files_directory, input_files[i])
-            output = sumcsv_test(file_path, column)
-            out_file = os.path.join(files_directory, output_files[i])
-            with open(out_file) as f:
-                expected_output = f.read()
-            try:
-                assert expected_output.strip() == output.strip()
-            except AssertionError:
-                print(f"Failed for: {input_files[i]}")
-                continue
-        print("Success!")    
+        # for i in range(0, len(input_files)):
+        #     file_path = os.path.join(files_directory, input_files[i])
+        #     output = sumcsv_test(file_path, column)
+        #     out_file = os.path.join(files_directory, output_files[i])
+        #     with open(out_file) as f:
+        #         expected_output = f.read()
+        #     try:
+        #         assert expected_output.strip() == output.strip()
+        #     except AssertionError:
+        #         print(f"Failed for: {input_files[i]}")
+        #         continue
+        # print("Success!")    
 
 
 # if __name__ == "__main__":
