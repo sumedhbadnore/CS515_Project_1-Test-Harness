@@ -13,7 +13,7 @@ def gron_test(file_path):
     return (result.strip())
 
 def sumcsv_test(file_path, column):
-    result = subprocess.check_output(['python', os.path.join('prog','gron.py'), file_path, column], universal_newlines=True)
+    result = subprocess.check_output(['python', os.path.join('prog','sumcsv.py'), file_path, column], universal_newlines=True)
     return (result.strip())
 def test_run():
     global files_directory
@@ -60,9 +60,12 @@ def test_run():
     input_files = [file for file in files if file.endswith(".in") and "sumcsv" in file]
     output_files = [file for file in files if file.endswith(".out") and "sumcsv" in file]
 
+    # Column is Hardcoded work on this 
+    column = "Population"
+    
     for i in range(0, len(input_files)):
         file_path = os.path.join(files_directory, input_files[i])
-        output = sumcsv_test(file_path)
+        output = sumcsv_test(file_path, column)
         out_file = os.path.join(files_directory, output_files[i])
         with open(out_file) as f:
             expected_output = f.read()
@@ -73,5 +76,5 @@ def test_run():
             continue
     print("Success!")
 
-# if __name__ == "__main__":
-#     test_run()
+if __name__ == "__main__":
+    test_run()
