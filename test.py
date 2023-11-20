@@ -24,7 +24,7 @@ def wc():
             continue
 
     ## WC Test-1 for arguments:
-    exp_out_file = "test\wc.test_1.arg.out"
+    exp_out_file = "test/wc.test_1.arg.out"
     with open (exp_out_file) as o:
         expected = o.read()
 
