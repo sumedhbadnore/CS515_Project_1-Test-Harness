@@ -1,0 +1,7 @@
+ho = {};
+ho.person = {};
+ho.person.name = "Alice";
+ho.person.age = 25;
+ho.person.address = {};
+ho.person.address.city = "Paris";
+ho.person.address.country = "France";
