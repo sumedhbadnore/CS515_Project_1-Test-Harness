@@ -1,4 +1,4 @@
-# CS515 Project-1
+# CS515 Project-1: Test Harness
 
 ## Author Information
 Sumedh Badnore 
@@ -8,6 +8,10 @@ sbadnore@stevens.edu
 
 ## Estimation of Hours Spent on the project
 I have put approximately 17 hours into this project 
+
+## Objective
+1. To implement a comprehensive test harness for three Python programs.
+2. To utilized Git for version control and GitHub Actions for continuous integration (CI).
 
 ## Testing of the code
 1. Initial Local Testing: The code has been tested on the local machine using the provided test cases in the examples.
